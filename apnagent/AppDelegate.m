@@ -7,20 +7,27 @@
 //
 
 #import "AppDelegate.h"
+#import "PushNotification.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //self.window.rootViewController = self.
-	[self.window makeKeyAndVisible];
-    
-	// Let the device know we want to receive push notifications
+  // Reference to Push notifs List VC
+  self.pnListVC = (apnListVC *)[[(UINavigationController *)self.window.rootViewController viewControllers] objectAtIndex:0];
+  
+  // Let the device know we want to receive push notifications
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
-    return YES;
+  
+  // Handle APN on Terminated state, app launched because of APN
+	NSDictionary *payload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+  if (payload)
+    [self.pnListVC addPushNotifWithType:PushNotifTypeTM andUserInfo:payload];
+  
+  return YES;
 }
-							
+            
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -56,6 +63,14 @@
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
 {
 	NSLog(@"Failed to get token, error: %@", error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+  // Detect if APN is received on Background or Foreground state
+  if (application.applicationState == UIApplicationStateInactive)
+    [self.pnListVC addPushNotifWithType:PushNotifTypeBG andUserInfo:userInfo];
+  else if (application.applicationState == UIApplicationStateActive)
+    [self.pnListVC addPushNotifWithType:PushNotifTypeFG andUserInfo:userInfo];
 }
 
 @end

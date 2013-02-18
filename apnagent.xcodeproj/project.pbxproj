@@ -17,12 +17,13 @@
 		113011E816A10E75008A3718 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 113011E716A10E75008A3718 /* Default@2x.png */; };
 		113011EA16A10E75008A3718 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 113011E916A10E75008A3718 /* Default-568h@2x.png */; };
 		113011ED16A10E75008A3718 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 113011EB16A10E75008A3718 /* MainStoryboard.storyboard */; };
-		113011F016A10E75008A3718 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113011EF16A10E75008A3718 /* ViewController.m */; };
 		113011F816A10E75008A3718 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113011F716A10E75008A3718 /* SenTestingKit.framework */; };
 		113011F916A10E75008A3718 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113011D316A10E75008A3718 /* UIKit.framework */; };
 		113011FA16A10E75008A3718 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113011D516A10E75008A3718 /* Foundation.framework */; };
 		1130120216A10E75008A3718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1130120016A10E75008A3718 /* InfoPlist.strings */; };
 		1130120516A10E75008A3718 /* apnagentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1130120416A10E75008A3718 /* apnagentTests.m */; };
+		2800B36A16CE7E4500EF4E16 /* apnListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2800B36916CE7E4500EF4E16 /* apnListVC.m */; };
+		2800B37116D228A900EF4E16 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2800B37016D228A900EF4E16 /* PushNotification.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,14 +51,16 @@
 		113011E716A10E75008A3718 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		113011E916A10E75008A3718 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		113011EC16A10E75008A3718 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		113011EE16A10E75008A3718 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		113011EF16A10E75008A3718 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		113011F616A10E75008A3718 /* apnagentTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = apnagentTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		113011F716A10E75008A3718 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		113011FF16A10E75008A3718 /* apnagentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "apnagentTests-Info.plist"; sourceTree = "<group>"; };
 		1130120116A10E75008A3718 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1130120316A10E75008A3718 /* apnagentTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = apnagentTests.h; sourceTree = "<group>"; };
 		1130120416A10E75008A3718 /* apnagentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = apnagentTests.m; sourceTree = "<group>"; };
+		2800B36816CE7E4500EF4E16 /* apnListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apnListVC.h; sourceTree = "<group>"; };
+		2800B36916CE7E4500EF4E16 /* apnListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = apnListVC.m; sourceTree = "<group>"; };
+		2800B36F16D228A900EF4E16 /* PushNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotification.h; sourceTree = "<group>"; };
+		2800B37016D228A900EF4E16 /* PushNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotification.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +122,11 @@
 			children = (
 				113011E216A10E75008A3718 /* AppDelegate.h */,
 				113011E316A10E75008A3718 /* AppDelegate.m */,
+				2800B36816CE7E4500EF4E16 /* apnListVC.h */,
+				2800B36916CE7E4500EF4E16 /* apnListVC.m */,
+				2800B36F16D228A900EF4E16 /* PushNotification.h */,
+				2800B37016D228A900EF4E16 /* PushNotification.m */,
 				113011EB16A10E75008A3718 /* MainStoryboard.storyboard */,
-				113011EE16A10E75008A3718 /* ViewController.h */,
-				113011EF16A10E75008A3718 /* ViewController.m */,
 				113011DA16A10E75008A3718 /* Supporting Files */,
 			);
 			path = apnagent;
@@ -272,7 +277,8 @@
 			files = (
 				113011E016A10E75008A3718 /* main.m in Sources */,
 				113011E416A10E75008A3718 /* AppDelegate.m in Sources */,
-				113011F016A10E75008A3718 /* ViewController.m in Sources */,
+				2800B36A16CE7E4500EF4E16 /* apnListVC.m in Sources */,
+				2800B37116D228A900EF4E16 /* PushNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,10 +384,15 @@
 		1130120916A10E75008A3718 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "apnagent/apnagent-Prefix.pch";
 				INFOPLIST_FILE = "apnagent/apnagent-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -392,6 +403,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "apnagent/apnagent-Prefix.pch";
 				INFOPLIST_FILE = "apnagent/apnagent-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -450,6 +462,7 @@
 				1130120A16A10E75008A3718 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1130120B16A10E75008A3718 /* Build configuration list for PBXNativeTarget "apnagentTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +471,7 @@
 				1130120D16A10E75008A3718 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
