@@ -4,8 +4,6 @@ _apnagent-ios_ is an iOS application that has been developed for use with the [N
 module [apnagent](https://github.com/qualiancy/apnagent) to facilitate testing and demonstration. It can
 be used to test any APN server-side tool.
 
-![Screenshot of apnagent-ios](/screenshot.png)
-
 ## Usage
 
 This assumes that you have created a new application in your iOS provisioning portal.
@@ -18,7 +16,7 @@ This assumes that you have created a new application in your iOS provisioning po
 from the bottom right corner click Add Build Setting > Add User-Defined Setting. The key is `BUNDLE_ID` and the value
 will be the application's bundle ID as specified in the iOS Provisioning portal. For example: `com.logicalparadox.apnagent`.
 
-##3. Build/Run:** Run the application on your device. APNs notification cannot be sent to the simulator. Your APN token
+**3. Build/Run:** Run the application on your device. APNs notification cannot be sent to the simulator. Your APN token
 will be logged to the console. Then use the server-side framework of your choice to send notifications to your device.
 
 ## License
