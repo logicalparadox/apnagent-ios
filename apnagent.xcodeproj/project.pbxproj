@@ -24,6 +24,7 @@
 		1130120516A10E75008A3718 /* apnagentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1130120416A10E75008A3718 /* apnagentTests.m */; };
 		2800B36A16CE7E4500EF4E16 /* apnListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2800B36916CE7E4500EF4E16 /* apnListVC.m */; };
 		2800B37116D228A900EF4E16 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2800B37016D228A900EF4E16 /* PushNotification.m */; };
+		28E0AE621701956F008881E7 /* apnDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E0AE611701956F008881E7 /* apnDetailsVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		2800B36916CE7E4500EF4E16 /* apnListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = apnListVC.m; sourceTree = "<group>"; };
 		2800B36F16D228A900EF4E16 /* PushNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotification.h; sourceTree = "<group>"; };
 		2800B37016D228A900EF4E16 /* PushNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotification.m; sourceTree = "<group>"; };
+		28E0AE601701956F008881E7 /* apnDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apnDetailsVC.h; sourceTree = "<group>"; };
+		28E0AE611701956F008881E7 /* apnDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = apnDetailsVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				113011E316A10E75008A3718 /* AppDelegate.m */,
 				2800B36816CE7E4500EF4E16 /* apnListVC.h */,
 				2800B36916CE7E4500EF4E16 /* apnListVC.m */,
+				28E0AE601701956F008881E7 /* apnDetailsVC.h */,
+				28E0AE611701956F008881E7 /* apnDetailsVC.m */,
 				2800B36F16D228A900EF4E16 /* PushNotification.h */,
 				2800B37016D228A900EF4E16 /* PushNotification.m */,
 				113011EB16A10E75008A3718 /* MainStoryboard.storyboard */,
@@ -279,6 +284,7 @@
 				113011E416A10E75008A3718 /* AppDelegate.m in Sources */,
 				2800B36A16CE7E4500EF4E16 /* apnListVC.m in Sources */,
 				2800B37116D228A900EF4E16 /* PushNotification.m in Sources */,
+				28E0AE621701956F008881E7 /* apnDetailsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,15 +394,16 @@
 		1130120916A10E75008A3718 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Luer (522YL8D7MN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Luer (522YL8D7MN)";
+				BUNDLE_ID = com.blueblex.apnagent;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "apnagent/apnagent-Prefix.pch";
 				INFOPLIST_FILE = "apnagent/apnagent-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "46F83F1E-F40E-4677-B5FE-5EEAFC0CC6AF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "46F83F1E-F40E-4677-B5FE-5EEAFC0CC6AF";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -404,15 +411,16 @@
 		1130120A16A10E75008A3718 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Luer (522YL8D7MN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Luer (522YL8D7MN)";
+				BUNDLE_ID = com.blueblex.apnagent;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "apnagent/apnagent-Prefix.pch";
 				INFOPLIST_FILE = "apnagent/apnagent-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "46F83F1E-F40E-4677-B5FE-5EEAFC0CC6AF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "46F83F1E-F40E-4677-B5FE-5EEAFC0CC6AF";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

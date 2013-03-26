@@ -7,8 +7,11 @@
 //
 
 #import "apnListVC.h"
+#import "apnDetailsVC.h"
 
 @interface apnListVC ()
+
+@property (nonatomic) PushNotification *selectedAPN;
 
 @end
 
@@ -156,16 +159,21 @@
  */
 
 #pragma mark - Table view delegate
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  // Set the selected Room
+  self.selectedAPN = [self.pushNotifs objectAtIndex:indexPath.row];
+	
+	return indexPath;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  // Navigation logic may go here. Create and push another view controller.
-  /*
-   <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-   // ...
-   // Pass the selected object to the new view controller.
-   [self.navigationController pushViewController:detailViewController animated:YES];
-   */
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+// Reset application's badge number
+- (IBAction)resetBadge:(id)sender {
+  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void)addPushNotifWithType:(PushNotifType)pNType andUserInfo:(NSDictionary *)userInfo {
@@ -180,6 +188,14 @@
   [self.tableView reloadData];
   
   NSLog(@"Push Notification added, Type: %d, PushArray count: %d, UserInfo: %@", aPushNotif.typeOfPN, self.pushNotifs.count, aPushNotif.theUserInfo);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  if ([segue.identifier isEqualToString:@"ShowPayloadDetailsView"]) {
+    apnDetailsVC *detailsVC = (apnDetailsVC *)segue.destinationViewController;
+    detailsVC.thePN = self.selectedAPN;
+  }
 }
 
 @end

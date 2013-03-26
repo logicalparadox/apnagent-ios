@@ -7,12 +7,17 @@
         <!--Navigation Controller-->
         <scene sceneID="TQc-9P-S1P">
             <objects>
-                <navigationController definesPresentationContext="YES" id="2NN-xM-VeG" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="2NN-xM-VeG" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="aBj-Xo-ttx">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="FuH-az-vBb">
+                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="q6A-0r-rZ9" kind="relationship" relationship="rootViewController" id="G4L-WF-dYm"/>
                     </connections>
@@ -26,15 +31,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="notificationsTableController" title="NotificationsTableVC" id="q6A-0r-rZ9" customClass="apnListVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gO4-NF-oae">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pushNotifCell" id="juM-qi-Ys3">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pushNotifCell" id="juM-qi-Ys3">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="&lt;No Alert Message>" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHe-wz-YMw">
@@ -102,6 +107,9 @@
                                     <constraint firstItem="Uvc-tu-5lQ" firstAttribute="leading" secondItem="juM-qi-Ys3" secondAttribute="leading" constant="20" type="default" id="okJ-Uq-kn5"/>
                                     <constraint firstAttribute="trailing" secondItem="VHe-wz-YMw" secondAttribute="trailing" constant="20" type="default" id="vf3-Bi-T81"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="1gu-sc-hA2" kind="push" identifier="ShowPayloadDetailsView" id="XEO-18-M9Z"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -109,12 +117,52 @@
                             <outlet property="delegate" destination="q6A-0r-rZ9" id="faa-3F-uhd"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Reset Badge" id="IlL-Ra-FOD">
+                            <connections>
+                                <action selector="resetBadge:" destination="q6A-0r-rZ9" id="DBy-Tz-7RZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Push Notifications" id="Scq-Aj-agR"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FnC-8V-kPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-304" y="51"/>
+        </scene>
+        <!--Apn DetailsVC - PayloadDetailsVC-->
+        <scene sceneID="12v-WZ-xES">
+            <objects>
+                <viewController storyboardIdentifier="payloadDetailsViewController" title="PayloadDetailsVC" id="1gu-sc-hA2" customClass="apnDetailsVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kMb-cu-KLj">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Payload Details" translatesAutoresizingMaskIntoConstraints="NO" id="OnD-L9-tvT">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OnD-L9-tvT" firstAttribute="leading" secondItem="kMb-cu-KLj" secondAttribute="leading" type="default" id="CIU-Kf-M8K"/>
+                            <constraint firstItem="OnD-L9-tvT" firstAttribute="top" secondItem="kMb-cu-KLj" secondAttribute="top" type="default" id="POv-YL-g9i"/>
+                            <constraint firstItem="OnD-L9-tvT" firstAttribute="trailing" secondItem="kMb-cu-KLj" secondAttribute="trailing" type="default" id="YW9-VX-hzL"/>
+                            <constraint firstItem="OnD-L9-tvT" firstAttribute="bottom" secondItem="kMb-cu-KLj" secondAttribute="bottom" type="default" id="wyy-jY-4PS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Payload Details" id="Qx5-Km-jPv"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="payloadTxtView" destination="OnD-L9-tvT" id="3DP-69-EYP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOy-1K-5NF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="51"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

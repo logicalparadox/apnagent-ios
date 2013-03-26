@@ -13,6 +13,8 @@
 
 @property (nonatomic) NSMutableArray *pushNotifs;
 
+- (IBAction)resetBadge:(id)sender;
+
 - (void)addPushNotifWithType:(PushNotifType)pNType andUserInfo:(NSDictionary *)userInfo;
 
 @end
