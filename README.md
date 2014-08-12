@@ -10,20 +10,25 @@ This assumes that you have created a new application in your iOS provisioning po
 
 **1. Clone:** Clone a copy of `apnagent-ios`.
 
-    git clone git@github.com:logicalparadox/apnagent-ios.git
+    git clone git@github.com:codeHatcher/apnagent-ios.git
 
 **2. xCode Configure:** Open the project in xCode and specify the `BUNDLE_ID`. Select Project > Build Settings, then
 from the bottom right corner click Add Build Setting > Add User-Defined Setting. The key is `BUNDLE_ID` and the value
-will be the application's bundle ID as specified in the iOS Provisioning portal. For example: `com.logicalparadox.apnagent`.
+will be the application's bundle ID as specified in the iOS Provisioning portal. For example: `com.codeHatcher.apnagent`.
 
 **3. Build/Run:** Run the application on your device. APNs notification cannot be sent to the simulator. Your APN token
 will be logged to the console. Then use the server-side framework of your choice to send notifications to your device.
+
+## Original
+This project is originally from git clone git@github.com:logicalparadox/apnagent-ios.git
+but has been updated to work with ios6 as the original project hasn't been updated in some
+time. I hope this helps some people.
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2012 Jake Luer <jake@alogicalparadox.com>
+Copyright (c) 2014 codeHatcher
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
