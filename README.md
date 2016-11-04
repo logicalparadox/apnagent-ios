@@ -12,7 +12,7 @@ This assumes that you have created a new application in your iOS provisioning po
 
     git clone git@github.com:logicalparadox/apnagent-ios.git
 
-**2. xCode Configure:** Open the project in xCode and specify the `BUNDLE_ID`. Select Project > Build Settings, then
+**2. Xcode Configure:** Open the project in Xcode and specify the `BUNDLE_ID`. Select Project > Build Settings, then
 from the bottom right corner click Add Build Setting > Add User-Defined Setting. The key is `BUNDLE_ID` and the value
 will be the application's bundle ID as specified in the iOS Provisioning portal. For example: `com.logicalparadox.apnagent`.
 
